@@ -1,12 +1,13 @@
 import * as vscode from 'vscode';
 import { ColorThemeKind } from 'vscode';
+import * as localize from '../common/localize';
+import { randomName } from '../common/names';
 import {
-  PokemonSize,
-  PokemonColor,
-  PokemonType,
-  ExtPosition,
-  Theme,
-  WebviewMessage,
+  getDefaultPokemon as getDefaultPokemonType,
+  getPokemonByGeneration,
+  getRandomPokemonConfig,
+} from '../common/pokemon-data';
+import {
   ALL_COLORS,
   ALL_SCALES,
   ALL_THEMES,
@@ -26,6 +27,16 @@ import {
   registerUtilityCommands,
 } from './commands/index';
 import { VSCODE_SPAWN_POKEMON_KEY } from '../constants/vscode-keys.constant';
+  ExtPosition,
+  PokemonColor,
+  PokemonGeneration,
+  PokemonSize,
+  PokemonType,
+  Theme,
+  WebviewMessage,
+} from '../common/types';
+import { availableColors, normalizeColor } from '../panel/pokemon-collection';
+import { POKEMON_DATA } from '../common/dex/index';
 
 const EXTRA_POKEMON_KEY = 'vscode-pokemon.extra-pokemon';
 const EXTRA_POKEMON_KEY_TYPES = EXTRA_POKEMON_KEY + '.types';
@@ -369,6 +380,16 @@ export function activate(context: vscode.ExtensionContext) {
 
         if (e.affectsConfiguration('vscode-pokemon.throwBallWithMouse')) {
           updatePanelThrowWithMouse();
+        }
+
+        if (e.affectsConfiguration('vscode-pokemon.pokemonLanguage')) {
+          // Reset the Pokemon translations cache when the language changes
+          localize.resetPokemonTranslationsCache();
+          // Update the panel to reflect the new language
+          const panel = getPokemonPanel();
+          if (panel) {
+            panel.update();
+          }
         }
       },
     ),

@@ -2,6 +2,15 @@
 
 All notable changes to the "vscode-pokemon" extension will be documented in this file.
 
+## [4.3.2]
+
+- fix: add back accidentally removed "remove-all" command
+
+## [4.3.1]
+
+- feat: add multi-language support
+- fix: add missing Nidoqueen & Rotom sprites
+
 ## [4.2.0]
 
 - feat: add shiny sprites & spawn rate for gen 1-4

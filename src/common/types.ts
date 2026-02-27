@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import { POKEMON_DATA } from './pokemon-data';
+import { POKEMON_DATA } from './dex/index';
 
+/* eslint-disable @typescript-eslint/naming-convention */
 export const enum PokemonColor {
   default = 'default',
   shiny = 'shiny',
