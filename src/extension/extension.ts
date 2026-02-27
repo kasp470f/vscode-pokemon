@@ -6,7 +6,6 @@ import {
   getDefaultPokemon as getDefaultPokemonType,
   getPokemonByGeneration,
   getRandomPokemonConfig,
-  POKEMON_DATA,
 } from '../common/pokemon-data';
 import {
   ALL_COLORS,
@@ -21,6 +20,7 @@ import {
   WebviewMessage,
 } from '../common/types';
 import { availableColors, normalizeColor } from '../panel/pokemon-collection';
+import { POKEMON_DATA } from '../common/dex/index';
 
 const EXTRA_POKEMON_KEY = 'vscode-pokemon.extra-pokemon';
 const EXTRA_POKEMON_KEY_TYPES = EXTRA_POKEMON_KEY + '.types';
