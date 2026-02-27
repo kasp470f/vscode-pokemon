@@ -1,4 +1,4 @@
-import { POKEMON_DATA } from '../common/pokemon-data';
+import { POKEMON_DATA } from '../common/dex/index';
 import {
   PokemonColor,
   PokemonConfig,
