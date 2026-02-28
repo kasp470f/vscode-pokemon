@@ -1,12 +1,13 @@
-import { POKEMON_DATA } from './dex/index';
+import { POKEMON_DATA } from '../dex/index';
+import { Theme } from './theme.type';
 
-/* eslint-disable @typescript-eslint/naming-convention */
 export const enum PokemonColor {
   default = 'default',
   shiny = 'shiny',
   null = 'null',
 }
 
+/* eslint-disable @typescript-eslint/naming-convention */
 export enum PokemonGeneration {
   Gen1 = 1,
   Gen2 = 2,
@@ -18,6 +19,10 @@ export type PokemonTypeString = string & keyof typeof POKEMON_DATA;
 
 export type PokemonType = PokemonTypeString;
 
+export const enum PokemonExtraSprite {
+  leftFacing = 'left_facing',
+}
+
 export interface PokemonConfig {
   id: number;
   name: string;
@@ -26,10 +31,6 @@ export interface PokemonConfig {
   possibleColors: PokemonColor[];
   originalSpriteSize?: number;
   extraSprites?: PokemonExtraSprite[];
-}
-
-export const enum PokemonExtraSprite {
-  leftFacing = 'left_facing',
 }
 
 export const enum PokemonSpeed {
@@ -46,34 +47,6 @@ export const enum PokemonSize {
   small = 'small',
   medium = 'medium',
   large = 'large',
-}
-
-export const enum ExtPosition {
-  panel = 'panel',
-  explorer = 'explorer',
-}
-
-export const enum Theme {
-  none = 'none',
-  forest = 'forest',
-  castle = 'castle',
-  beach = 'beach',
-}
-
-export const enum ColorThemeKind {
-  light = 1,
-  dark = 2,
-  highContrast = 3,
-}
-
-export class WebviewMessage {
-  text: string;
-  command: string;
-
-  constructor(text: string, command: string) {
-    this.text = text;
-    this.command = command;
-  }
 }
 
 export const ALL_COLORS = [PokemonColor.default];
