@@ -242,9 +242,9 @@ export abstract class BasePokemonType implements IPokemonType {
     const basePath = segments.slice(0, segments.length - 3).join('/');
 
     if (friend) {
-      this.speech.src = `${basePath}/heart.png`;
+      this.speech.src = `${basePath}/emotions/heart.png`;
     } else {
-      this.speech.src = `${basePath}/happy.png`;
+      this.speech.src = `${basePath}/emotions/happy.png`;
     }
 
     this.speech.style.display = 'block';
