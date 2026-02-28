@@ -228,7 +228,7 @@ function addPokemonToPanel(
 
     if (pokemonColor === PokemonColor.shiny) {
       const shinyOverlay = document.createElement('img');
-      shinyOverlay.src = `${basePokemonUri}/shiny-anim.gif?t=${Date.now()}`;
+      shinyOverlay.src = `${basePokemonUri}/animations/shiny-anim.gif?t=${Date.now()}`;
       shinyOverlay.className = 'shiny-overlay';
       shinyOverlay.style.left = pokemonSpriteElement.style.left;
       shinyOverlay.style.bottom = pokemonSpriteElement.style.bottom;
