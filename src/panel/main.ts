@@ -146,7 +146,7 @@ function addPokemonToPanel(
 
   var speechBubbleElement: HTMLImageElement = document.createElement('img');
   speechBubbleElement.className = `bubble bubble-${pokemonSize} b-${originalSpriteSize}`;
-  speechBubbleElement.src = `${basePokemonUri}/heart.png`;
+  speechBubbleElement.src = `${basePokemonUri}/emotions/heart.png`;
   (document.getElementById('pokemonContainer') as HTMLDivElement).appendChild(
     speechBubbleElement,
   );
