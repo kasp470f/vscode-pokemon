@@ -41,15 +41,23 @@
         "onCommand:vscode-pokemon.configure-keybindings",
         "onCommand:vscode-pokemon.change-pokemon-language",
         "onWebviewPanel:pokemonCoding",
-        "onView:explorer",
         "onView:pokemonView",
         "onStartupFinished"
     ],
     "main": "./out/extension/extension.js",
     "browser": "./dist/web/extension-web.js",
     "contributes": {
+        "viewsContainers": {
+            "panel": [
+                {
+                    "id": "vscodePokemon",
+                    "title": "VS Code Pokémon",
+                    "icon": "media/icon/dark-add.svg"
+                }
+            ]
+        },
         "views": {
-            "explorer": [
+            "vscodePokemon": [
                 {
                     "type": "webview",
                     "id": "pokemonView",

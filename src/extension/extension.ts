@@ -1423,7 +1423,7 @@ class PokemonPanel extends PokemonWebviewContainer implements IPokemonPanel {
     // Otherwise, create a new panel.
     const panel = vscode.window.createWebviewPanel(
       PokemonPanel.viewType,
-      vscode.l10n.t('Pokemon Panel'),
+      vscode.l10n.t('VS Code Pokémon'),
       vscode.ViewColumn.Two,
       getWebviewOptions(extensionUri),
     );
