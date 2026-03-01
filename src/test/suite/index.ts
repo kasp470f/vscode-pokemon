@@ -29,6 +29,7 @@ export async function run(): Promise<void> {
   const mocha = new Mocha({
     ui: 'tdd',
     color: true,
+    grep: process.env.MOCHA_GREP,
     require: [
       'ts-node/register',
       'source-map-support/register',
